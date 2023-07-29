@@ -112,8 +112,8 @@ class MainActivity : ComponentActivity() {
 
                         TextButton( // Sign Up Button
                             modifier = Modifier
-                            .padding(5.dp)
-                            .align(Alignment.Start),
+                                .padding(5.dp)
+                                .align(Alignment.Start),
                             onClick = { /*TODO*/ }) {
                             Column() {
                                 Text(
@@ -159,6 +159,11 @@ fun EditText(
                 imageVector = iconLeading,
                 contentDescription = iconLeadingDescription
             )
+        },
+        trailingIcon = {
+                       IconButton(onClick = { text = TextFieldValue("") }) {
+                           Icon(imageVector = Icons.Filled.Clear, contentDescription = "clear_input")
+                       }
         },
         singleLine = true
     )
