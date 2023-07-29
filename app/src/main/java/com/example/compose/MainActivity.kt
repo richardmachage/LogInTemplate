@@ -83,10 +83,18 @@ class MainActivity : ComponentActivity() {
 
                         TextButton( //Forgotten password button
                             modifier = Modifier
-                                .padding(5.dp)
+                                .padding(2.dp)
                                 .align(Alignment.Start),
                             onClick = { /*TODO*/ }) {
-                            Text(text = "Forgotten password?", fontStyle = FontStyle.Italic)
+                            Column() {
+                                Text(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .align(Alignment.Start),
+                                    text = "Forgotten password?",
+                                    fontStyle = FontStyle.Italic
+                                )
+                            }
                         }
 
                         Button( // Log In Button
@@ -102,6 +110,23 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Log In")
                         }
 
+                        TextButton( // Sign Up Button
+                            modifier = Modifier
+                            .padding(5.dp)
+                            .align(Alignment.Start),
+                            onClick = { /*TODO*/ }) {
+                            Column() {
+                                Text(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .align(Alignment.Start),
+                                    text = "You don't have an account? Sing Up",
+                                    fontStyle = FontStyle.Italic
+                                )
+                            }
+
+                        }
+
                     }
 
                 }
@@ -109,7 +134,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -193,7 +217,6 @@ fun PasswordEditText(
     )
 
 }
-
 
 
 @Preview(showBackground = true)
